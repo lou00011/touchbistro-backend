@@ -6,13 +6,15 @@
   "scripts": {
     "test": "jest",
     "tsc": "tsc",
-    "start":"npm run tsc && node dist/app.js",
+    "start": "npm run tsc && node dist/app.js",
     "build": "echo PLACEHOLDER! TODO!"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
     "@types/express": "^4.17.2",
     "express": "^4.17.1",
     "typescript": "^3.7.3"
