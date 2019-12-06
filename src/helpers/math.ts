@@ -16,7 +16,7 @@ const getPrimes = (ns : number[]) => {
 
   for (let counter = ns[0]; counter <= limit; counter++){
       primes.push(ns[0])
-      ns = ns.filter(v => v%ns[0]!== 0)
+      ns = ns.filter(x => x%ns[0]!== 0)
   }
   return [...primes, ...ns]
 }
