@@ -38,5 +38,20 @@ describe('/ gateway testing', () => {
     const expected = 'output'
     expect(actual).toHaveProperty(expected)
   })
-  
+})
+
+describe('404 catch all testing', () => {
+  test('GET - 404 returned', async () => {
+    const res = await st(app).get('/nonexistent/route')
+    const actual = res.statusCode
+    const expected = 404
+    expect(actual).toStrictEqual(expected)
+  })
+
+  test('POST - 404 returned', async () => {
+    const res = await st(app).post('/nonexistent/route')
+    const actual = res.statusCode
+    const expected = 404
+    expect(actual).toStrictEqual(expected)
+  })
 })
