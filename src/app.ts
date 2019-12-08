@@ -1,19 +1,12 @@
 import express from 'express'
 import { getResult } from './helpers/math'
+import { router } from './routes/index'
 
 const app = express()
-const port = 8080
+const port = process.env.PORT || 8080
 
 app.use(express.json())
-
-app.get('/', (req, res) => {
-  res.send('HELLO WORLD')
-})
-
-app.post('/', (req, res) => {
-  res.json({output: getResult(req.body.input)})
-})
-
+app.use('/', router)
 app.listen(port)
 
 export {
