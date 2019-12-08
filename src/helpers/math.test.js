@@ -128,8 +128,21 @@ describe('Result calculation', () => {
   })
 
   test('Valid - Testcase 5 - Edge case', () => {
+    const actual = getResult(-10)
+    const expected = []
+    expect(actual).toStrictEqual(expected)
+  })
+
+  test('Valid - Testcase 6 - Edge case, handle []', () => {
     const actual = getResult([])
     const expected = []
     expect(actual).toStrictEqual(expected)
   })
+
+  test('Valid - Testcase 7 - Edge case, handle undefined', () => {
+    const actual = getResult(undefined)
+    const expected = []
+    expect(actual).toStrictEqual(expected)
+  })
+
 })
