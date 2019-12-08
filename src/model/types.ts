@@ -3,7 +3,7 @@ interface Input {
 }
 
 interface Output {
-  output: number
+  output: number[]
 }
 
 
@@ -11,22 +11,22 @@ function parseInput(json: string) {
   let parsed : Input
 
   try {
-    parsed = <Input>JSON.parse(json)
+    parsed = <Input>JSON.parse(json) 
   } catch (err) { 
-    parsed = {} as Input
+    parsed = <Input>{}
   }
   return parsed
 }
 
 
-function parseOutput(json: string) {
-  let parsed : Output
-
-  try {
-    parsed = <Output>JSON.parse(json)
-  } catch (err) { 
-    parsed = {} as Output 
-  }
-  return parsed
+function toOutput(ns : number[]){
+  return <Output>{output: ns}
 }
 
+
+export {
+  Input,
+  Output,
+  parseInput,
+  toOutput
+}
