@@ -1,6 +1,5 @@
 import express from 'express'
 import {inputToOutput} from '../controller/calc'
-import { json } from 'body-parser'
 
 const router = express.Router()
 
