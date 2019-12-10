@@ -1,5 +1,6 @@
 import express from 'express'
 import {inputToOutput} from '../controller/calc'
+import { json } from 'body-parser'
 
 const router = express.Router()
 
@@ -9,7 +10,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  res.json(inputToOutput(req.body))
+  res.send(JSON.stringify(inputToOutput(req.body)))
 })
 
 export { 
