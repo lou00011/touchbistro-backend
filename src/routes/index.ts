@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  res.send(JSON.stringify(inputToOutput(req.body)))
+  res.json(inputToOutput(req.body))
 })
 
 export { 
