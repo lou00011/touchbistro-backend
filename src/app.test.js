@@ -38,6 +38,36 @@ describe('/ gateway testing', () => {
     const expected = 'output'
     expect(actual).toHaveProperty(expected)
   })
+
+  test('POST - valid return value', async () => {
+    const data = {
+      input: 10
+    }
+
+    const res = await st(app)
+                        .post('/')
+                        .send(data)
+                        .set('Accept', 'application/json')
+
+    const actual = res.body
+    const expected = {output: [3,5]}
+    expect(actual).toStrictEqual(expected)
+  })
+
+  test('POST - valid return value #2', async () => {
+    const data = {
+      input: 18
+    }
+
+    const res = await st(app)
+                        .post('/')
+                        .send(data)
+                        .set('Accept', 'application/json')
+
+    const actual = res.body
+    const expected = {output: [7]}
+    expect(actual).toStrictEqual(expected)
+  })
 })
 
 describe('404 catch all testing', () => {
